@@ -1,11 +1,16 @@
-import {Mapping, Get} from "@tsclean/core";
+import {Mapping, Get, Adapter} from "@tsclean/core";
+import { IEmployeeService } from "@/domain/use-cases/employee-service";
+import { EmployeeServiceImpl } from "@/domain/use-cases/impl/employee-service-impl";
 
-@Mapping('api/v1/employee')
+@Mapping('api/v1/employees')
 export class EmployeeController {
-    constructor() {
+    constructor(
+        @Adapter(EmployeeServiceImpl)
+        private readonly employeeService: IEmployeeService,
+    ) {
     }
     @Get()
-    async getWelcome(): Promise<any> {
-        return 'Welcome to the world of clean architecture'
+    async getEmployees(): Promise<any> {
+        return this.employeeService.getEmployees()
     }
 }
