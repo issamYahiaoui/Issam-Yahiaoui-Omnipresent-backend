@@ -1,3 +1,3 @@
-import {EmployeeController} from "@/infrastructure/entry-points/api/employee-controller";
+import { EmployeeController } from "./v1/employee-controller";
 
 export const controllers = [EmployeeController];
