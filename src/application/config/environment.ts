@@ -44,3 +44,5 @@ export const CONFIG_MYSQL = {
 }
 
 
+
+export const CONSOLE_LOGG_ENABLED = false
