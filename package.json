@@ -6,7 +6,8 @@
       "start": "node ./dist/index.js",
       "build": "rimraf dist && tsc -p tsconfig-build.json",
       "watch": "nodemon --exec \"npm run build && npm run start\" --watch src --ext ts",
-      "test": "jest ./ --passWithNoTests --coverage --runInBand --no-cache"
+      "test": "jest ./ --passWithNoTests --coverage --runInBand --no-cache",
+      "pre-commit": "lint-staged"
    },
    "dependencies": {
       "@tsclean/core": "^1.7.0",
@@ -33,6 +34,7 @@
       "eslint-plugin-node": "^11.1.0",
       "eslint-plugin-promise": "^5.2.0",
       "jest": "^27.5.1",
+      "lint-staged": "^12.3.7",
       "nodemon": "^2.0.9",
       "prettier": "^2.6.2",
       "prettier-eslint": "^13.0.0",
