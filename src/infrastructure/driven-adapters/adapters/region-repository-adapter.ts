@@ -23,9 +23,8 @@ const REGION_DATA = [
   },
 ];
 
-// TODO: Replace this with a DB ORM Adapter
+// TODO: Replace this with a DB ORM Adapter in the future
 export class RegionRepositoryAdapter implements IRegionRepository {
-  // Implementation
   async getRegionByNames(
     data: IRegionRepository.getRegionByName.Params,
   ): Promise<IRegionRepository.getRegionByName.Result> {

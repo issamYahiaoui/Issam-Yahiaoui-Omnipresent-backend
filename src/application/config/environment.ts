@@ -40,4 +40,17 @@ export const CONFIG_MYSQL = {
   database: process.env.DATABASE,
 };
 
-export const CONSOLE_LOGG_ENABLED = false;
+
+/**
+ *  MySQL
+ */
+export const CONFIG_SQLITE = {
+  host: process.env.HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DATABASE,
+};
+
+
+export const CONSOLE_LOGG_ENABLED = process.env.CONSOLE_LOGG_ENABLED;
+export const COUNTRIES_SERVICE_URL = process.env.COUNTRIES_SERVICE_URL;

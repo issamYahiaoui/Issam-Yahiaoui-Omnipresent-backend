@@ -1,11 +1,10 @@
 import logger from '@/application/common/logger';
 import {  IGetCountriesRepository } from '@/domain/models';
 import axios from 'axios';
+import { COUNTRIES_SERVICE_URL } from "@/application/config/environment";
 
-const COUNTRIES_SERVICE_URL = 'https://restcountries.com/v3.1/alpha';
 
 export class GetCountriesRepositoryAdapter implements IGetCountriesRepository {
-  // Implementation
   async getCountries(data: IGetCountriesRepository.Params): Promise<IGetCountriesRepository.Result> {
     const { countriesCodes } = data;
     try {

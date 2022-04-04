@@ -8,6 +8,7 @@ export class GetEmployeesController {
     private readonly employeesService: IGetEmployeesService,
   ) {}
 
+  // TODO: Add Pagination
   @Get()
   async getEmployees(): Promise<any> {
     return this.employeesService.getEmployees();
