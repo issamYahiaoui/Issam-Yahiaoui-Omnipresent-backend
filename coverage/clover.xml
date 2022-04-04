@@ -14,11 +14,11 @@
     </package>
     <package name="models.contracts">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="get-countries-repository.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/models/contracts/get-countries-repository.ts">
+      <file name="countries-repository.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/models/contracts/countries-repository.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="get-employees-repository.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/models/contracts/get-employees-repository.ts">
+      <file name="employees-repository.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/models/contracts/employees-repository.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
       </file>
@@ -35,11 +35,11 @@
     </package>
     <package name="use-cases">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="get-countries-service.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/use-cases/get-countries-service.ts">
+      <file name="countries-service.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/use-cases/countries-service.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="get-employees-service.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/use-cases/get-employees-service.ts">
+      <file name="employees-service.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/use-cases/employees-service.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
       </file>
@@ -57,7 +57,7 @@
     </package>
     <package name="use-cases.impl">
       <metrics statements="39" coveredstatements="15" conditionals="6" coveredconditionals="0" methods="13" coveredmethods="2"/>
-      <file name="get-countries-service-impl.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/use-cases/impl/get-countries-service-impl.ts">
+      <file name="countries-service-impl.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/use-cases/impl/countries-service-impl.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -65,7 +65,7 @@
         <line num="10" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
       </file>
-      <file name="get-employees-service-impl.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/use-cases/impl/get-employees-service-impl.ts">
+      <file name="employees-service-impl.ts" path="/Users/issam/dev/interviews/omnipresent/src/domain/use-cases/impl/employees-service-impl.ts">
         <metrics statements="26" coveredstatements="4" conditionals="6" coveredconditionals="0" methods="9" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>

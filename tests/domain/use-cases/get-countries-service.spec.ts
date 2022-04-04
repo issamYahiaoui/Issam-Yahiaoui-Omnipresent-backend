@@ -1,13 +1,13 @@
-import { GetCountriesServiceImpl } from '@/domain/use-cases';
+import { CountriesServiceImpl } from '@/domain/use-cases';
 import { fakeGetCountriesResponse, GetCountriesRepositorySpy } from '@/tests/domain/mocks';
 
 type SutTypes = {
-  sut: GetCountriesServiceImpl;
+  sut: CountriesServiceImpl;
   getCountriesRepositorySpy: GetCountriesRepositorySpy;
 };
 const makeSut = (): SutTypes => {
   const getCountriesRepositorySpy = new GetCountriesRepositorySpy();
-  const sut = new GetCountriesServiceImpl(getCountriesRepositorySpy);
+  const sut = new CountriesServiceImpl(getCountriesRepositorySpy);
   return { sut, getCountriesRepositorySpy };
 };
 describe('Get Countries use case', () => {

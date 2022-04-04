@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for use-cases/impl/get-employees-service-impl.ts</title>
+    <title>Code coverage report for use-cases/impl/employees-service-impl.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">use-cases/impl</a> get-employees-service-impl.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">use-cases/impl</a> employees-service-impl.ts</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">20% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>6/30</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>0/6</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>0/9</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">15.38% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>4/26</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -204,22 +204,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Adapter, Service } from '@tsclean/core';
-import { EmployeeModel, GET_EMPLOYEES_REPOSITORY, IGetEmployeesRepository } from '@/domain/models';
+import { EmployeeModel, GET_EMPLOYEES_REPOSITORY, IEmployeesRepository } from '@/domain/models';
 import {
   GET_COUNTRIES_SERVICE,
-  IGetCountriesService,
-  IGetEmployeesService,
+  ICountriesService,
+  IEmployeesService,
   IRegionService,
   REGION_SERVICE,
 } from '@/domain/use-cases';
 &nbsp;
 @Service()
-export class GetEmployeesServiceImpl implements IGetEmployeesService {
+export class EmployeesServiceImpl implements IEmployeesService {
 <span class="fstat-no" title="function not covered" >  constructor(</span>
     @Adapter(GET_EMPLOYEES_REPOSITORY)
-    private readonly <span class="cstat-no" title="statement not covered" >getEmployeesRepository: IGetEmployeesRepository,</span>
+    private readonly <span class="cstat-no" title="statement not covered" >getEmployeesRepository: IEmployeesRepository,</span>
     @Adapter(GET_COUNTRIES_SERVICE)
-    private readonly <span class="cstat-no" title="statement not covered" >getCountriesService: IGetCountriesService,</span>
+    private readonly <span class="cstat-no" title="statement not covered" >getCountriesService: ICountriesService,</span>
     @Adapter(REGION_SERVICE)
     private readonly <span class="cstat-no" title="statement not covered" >regionService: IRegionService,</span>
   ) {}
@@ -241,10 +241,10 @@ export class GetEmployeesServiceImpl implements IGetEmployeesService {
   }
 &nbsp;
   private <span class="fstat-no" title="function not covered" >parseEmployeesResponse(</span>
-    employees: IGetEmployeesRepository.Result,
-    countries: IGetCountriesService.Result,
+    employees: IEmployeesRepository.Result,
+    countries: ICountriesService.Result,
     regionsConfig: IRegionService.getRegionByName.Result,
-  ): IGetEmployeesService.Result {
+  ): IEmployeesService.Result {
     const countriesMap = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >    countries.map(<span class="fstat-no" title="function not covered" >(c</span>ountry) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      countriesMap[country.code] = country;</span>
@@ -262,7 +262,7 @@ export class GetEmployeesServiceImpl implements IGetEmployeesService {
         ...employee,
         country: employeeCountry,
         ...(hasAdditionalId &amp;&amp; {
-          id: GetEmployeesServiceImpl.getAdditionalId(employee),
+          id: EmployeesServiceImpl.getAdditionalId(employee),
         }),
       };
     });
@@ -292,4 +292,3 @@ export class GetEmployeesServiceImpl implements IGetEmployeesService {
         <script src="../../block-navigation.js"></script>
     </body>
 </html>
-    

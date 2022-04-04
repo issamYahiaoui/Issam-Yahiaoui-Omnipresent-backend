@@ -1,26 +1,26 @@
-import { GET_COUNTRIES_REPOSITORY, GET_EMPLOYEES_REPOSITORY, REGION_REPOSITORY } from '@/domain/models';
+import { COUNTRIES_REPOSITORY, EMPLOYEES_REPOSITORY, REGION_REPOSITORY } from '@/domain/models';
 import {
-  GetCountriesServiceImpl,
-  GetEmployeesServiceImpl,
-  GET_COUNTRIES_SERVICE,
-  GET_EMPLOYEES_SERVICE,
+  CountriesServiceImpl,
+  EmployeesServiceImpl,
+  COUNTRIES_SERVICE,
+  EMPLOYEES_SERVICE,
   RegionServiceImpl,
   REGION_SERVICE,
 } from '@/domain/use-cases';
 import {
-  GetCountriesRepositoryAdapter,
-  GetEmployeesRepositoryAdapter,
+  CountriesRepositoryAdapter,
+  EmployeesRepositoryAdapter,
   RegionRepositoryAdapter,
 } from '@/infrastructure/driven-adapters/adapters';
 
 export const adapters = [
   {
-    provide: GET_COUNTRIES_REPOSITORY,
-    useClass: GetCountriesRepositoryAdapter,
+    provide: COUNTRIES_REPOSITORY,
+    useClass: CountriesRepositoryAdapter,
   },
   {
-    provide: GET_EMPLOYEES_REPOSITORY,
-    useClass: GetEmployeesRepositoryAdapter,
+    provide: EMPLOYEES_REPOSITORY,
+    useClass: EmployeesRepositoryAdapter,
   },
   {
     provide: REGION_REPOSITORY,
@@ -30,12 +30,12 @@ export const adapters = [
 
 export const services = [
   {
-    provide: GET_COUNTRIES_SERVICE,
-    useClass: GetCountriesServiceImpl,
+    provide: COUNTRIES_SERVICE,
+    useClass: CountriesServiceImpl,
   },
   {
-    provide: GET_EMPLOYEES_SERVICE,
-    useClass: GetEmployeesServiceImpl,
+    provide: EMPLOYEES_SERVICE,
+    useClass: EmployeesServiceImpl,
   },
   {
     provide: REGION_SERVICE,

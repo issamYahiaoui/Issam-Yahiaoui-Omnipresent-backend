@@ -1,11 +1,11 @@
 import logger from '@/application/common/logger';
-import {  IGetCountriesRepository } from '@/domain/models';
+import {  ICountriesRepository } from '@/domain/models';
 import axios from 'axios';
 import { COUNTRIES_SERVICE_URL } from "@/application/config/environment";
 
 
-export class GetCountriesRepositoryAdapter implements IGetCountriesRepository {
-  async getCountries(data: IGetCountriesRepository.Params): Promise<IGetCountriesRepository.Result> {
+export class CountriesRepositoryAdapter implements ICountriesRepository {
+  async getCountries(data: ICountriesRepository.Params): Promise<ICountriesRepository.Result> {
     const { countriesCodes } = data;
     try {
       const response = await axios.get(`${COUNTRIES_SERVICE_URL}?codes=${countriesCodes.join(',')}`);
@@ -16,7 +16,7 @@ export class GetCountriesRepositoryAdapter implements IGetCountriesRepository {
     }
   }
 
-  private parseCountriesResult(data: any, countriesCodes: string[]): Promise<IGetCountriesRepository.Result> {
+  private parseCountriesResult(data: any, countriesCodes: string[]): Promise<ICountriesRepository.Result> {
     return data.map((countryData) => {
       const currencies = Object.entries(countryData.currencies).map(
         ([key, value]: [key: string, value: { name: string; symbol: string }]) => ({

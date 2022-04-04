@@ -1,3 +1,3 @@
-export * from './get-employees-service-impl';
-export * from './get-countries-service-impl';
+export * from './employees-service-impl';
+export * from './countries-service-impl';
 export * from './region-service-impl';

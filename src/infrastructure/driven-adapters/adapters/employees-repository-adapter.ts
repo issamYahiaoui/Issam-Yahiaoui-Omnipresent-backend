@@ -1,4 +1,4 @@
-import { EmployeeModel, IGetEmployeesRepository } from '@/domain/models';
+import { EmployeeModel, IEmployeesRepository } from '@/domain/models';
 
 const EMPLOYEES_DATA = JSON.parse(`[
     {
@@ -52,7 +52,7 @@ const EMPLOYEES_DATA = JSON.parse(`[
 ]`);
 
 // TODO: Replace this with a DB ORM Adapter in the futur
-export class GetEmployeesRepositoryAdapter implements IGetEmployeesRepository {
+export class EmployeesRepositoryAdapter implements IEmployeesRepository {
   async getEmployees(): Promise<EmployeeModel[]> {
     return Promise.resolve(EMPLOYEES_DATA);
   }

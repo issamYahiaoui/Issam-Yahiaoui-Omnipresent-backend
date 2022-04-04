@@ -1,3 +1,3 @@
-export * from './get-countries-repository-adapter';
-export * from './get-employees-repository-adapter';
+export * from './countries-repository-adapter';
+export * from './employees-repository-adapter';
 export * from './region-repository-adapter';

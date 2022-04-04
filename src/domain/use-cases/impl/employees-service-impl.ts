@@ -1,20 +1,20 @@
 import { Adapter, Service } from '@tsclean/core';
-import { EmployeeModel, GET_EMPLOYEES_REPOSITORY, IGetEmployeesRepository } from '@/domain/models';
+import { EmployeeModel, EMPLOYEES_REPOSITORY, IEmployeesRepository } from '@/domain/models';
 import {
-  GET_COUNTRIES_SERVICE,
-  IGetCountriesService,
-  IGetEmployeesService,
+  COUNTRIES_SERVICE,
+  ICountriesService,
+  IEmployeesService,
   IRegionService,
   REGION_SERVICE,
 } from '@/domain/use-cases';
 
 @Service()
-export class GetEmployeesServiceImpl implements IGetEmployeesService {
+export class EmployeesServiceImpl implements IEmployeesService {
   constructor(
-    @Adapter(GET_EMPLOYEES_REPOSITORY)
-    private readonly getEmployeesRepository: IGetEmployeesRepository,
-    @Adapter(GET_COUNTRIES_SERVICE)
-    private readonly getCountriesService: IGetCountriesService,
+    @Adapter(EMPLOYEES_REPOSITORY)
+    private readonly getEmployeesRepository: IEmployeesRepository,
+    @Adapter(COUNTRIES_SERVICE)
+    private readonly getCountriesService: ICountriesService,
     @Adapter(REGION_SERVICE)
     private readonly regionService: IRegionService,
   ) {}
@@ -36,10 +36,10 @@ export class GetEmployeesServiceImpl implements IGetEmployeesService {
   }
 
   private parseEmployeesResponse(
-    employees: IGetEmployeesRepository.Result,
-    countries: IGetCountriesService.Result,
+    employees: IEmployeesRepository.Result,
+    countries: ICountriesService.Result,
     regionsConfig: IRegionService.getRegionByName.Result,
-  ): IGetEmployeesService.Result {
+  ): IEmployeesService.Result {
     const countriesMap = {};
     countries.map((country) => {
       countriesMap[country.code] = country;
@@ -57,7 +57,7 @@ export class GetEmployeesServiceImpl implements IGetEmployeesService {
         ...employee,
         country: employeeCountry,
         ...(hasAdditionalId && {
-          id: GetEmployeesServiceImpl.getAdditionalId(employee),
+          id: EmployeesServiceImpl.getAdditionalId(employee),
         }),
       };
     });

@@ -1,4 +1,4 @@
-import { IGetCountriesRepository } from '@/domain/models';
+import { ICountriesRepository } from '@/domain/models';
 
 export const fakeGetCountriesResponse = [
   {
@@ -17,10 +17,10 @@ export const fakeGetCountriesResponse = [
   },
 ];
 
-export class GetCountriesRepositorySpy implements IGetCountriesRepository {
+export class GetCountriesRepositorySpy implements ICountriesRepository {
   public result = fakeGetCountriesResponse;
 
-  async getCountries(): Promise<IGetCountriesRepository.Result> {
+  async getCountries(): Promise<ICountriesRepository.Result> {
     return this.result;
   }
 }

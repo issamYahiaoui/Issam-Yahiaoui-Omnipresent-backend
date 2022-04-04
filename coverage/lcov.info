@@ -12,7 +12,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/domain/models/contracts/get-countries-repository.ts
+SF:src/domain/models/contracts/countries-repository.ts
 FNF:0
 FNH:0
 DA:3,1
@@ -22,7 +22,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/domain/models/contracts/get-employees-repository.ts
+SF:src/domain/models/contracts/employees-repository.ts
 FNF:0
 FNH:0
 DA:3,1
@@ -54,7 +54,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/domain/use-cases/get-countries-service.ts
+SF:src/domain/use-cases/countries-service.ts
 FNF:0
 FNH:0
 DA:3,1
@@ -64,7 +64,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/domain/use-cases/get-employees-service.ts
+SF:src/domain/use-cases/employees-service.ts
 FNF:0
 FNH:0
 DA:3,1
@@ -97,7 +97,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/domain/use-cases/impl/get-countries-service-impl.ts
+SF:src/domain/use-cases/impl/countries-service-impl.ts
 FN:10,(anonymous_4)
 FN:12,(anonymous_5)
 FNF:2
@@ -115,7 +115,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/domain/use-cases/impl/get-employees-service-impl.ts
+SF:src/domain/use-cases/impl/employees-service-impl.ts
 FN:13,(anonymous_4)
 FN:22,(anonymous_5)
 FN:25,(anonymous_6)

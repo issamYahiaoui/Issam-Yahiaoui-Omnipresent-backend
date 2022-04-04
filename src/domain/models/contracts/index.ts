@@ -1,3 +1,3 @@
-export * from './get-countries-repository';
-export * from './get-employees-repository';
+export * from './countries-repository';
+export * from './employees-repository';
 export * from './region-repository';
