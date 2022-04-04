@@ -25,6 +25,7 @@ module.exports = {
     "no-useless-constructor": "off",
     'array-callback-return': 'off',
     'no-redeclare': 'off',
+    'no-undef': 'off',
   },
   overrides: [
     {

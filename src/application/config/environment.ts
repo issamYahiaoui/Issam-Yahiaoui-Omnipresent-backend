@@ -54,3 +54,6 @@ export const CONFIG_SQLITE = {
 
 export const CONSOLE_LOGG_ENABLED = process.env.CONSOLE_LOGG_ENABLED;
 export const COUNTRIES_SERVICE_URL = process.env.COUNTRIES_SERVICE_URL;
+export const API_CACHE_TTL = process.env.API_CACHE_TTL
+export const API_CACHE_CLIENT = process.env.API_CACHE_CLIENT
+export const ENABLE_API_CACHE = process.env.ENABLE_API_CACHE
