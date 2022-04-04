@@ -1,9 +1,15 @@
 export type CountryModel = {
-    // Attributes
-    id: number;
-    name: string;
-    currencies: any;
-    languages: any;
-    timezones: string[]
-}
+  id: number;
+  code: string;
+  name: string;
+  region: string;
+  currencies: Currency[];
+  languages: string[];
+  timezones: string[];
+};
 
+export type Currency = {
+  name: string;
+  code: string;
+  symbol: string;
+};

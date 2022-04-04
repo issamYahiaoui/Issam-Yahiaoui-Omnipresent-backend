@@ -1,3 +1,4 @@
-import { CountryController } from "./v1/country-controller";
-import { EmployeeController } from "./v1/employee-controller";
-export const controllers = [EmployeeController, CountryController];
+import { GetCountriesController } from './v1/get-countries-controller';
+import { GetEmployeesController } from './v1/get-employees-controller';
+
+export const controllers = [GetCountriesController, GetEmployeesController];
