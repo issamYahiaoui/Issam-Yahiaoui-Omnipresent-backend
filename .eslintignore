@@ -2,3 +2,9 @@ node_modules
 dist
 coverage
 tests
+package.json
+package-lock.json
+tsconfig.json
+tsconfig.spec.json
+tsconfig-build.json
+tsconfig-build.spec.json
