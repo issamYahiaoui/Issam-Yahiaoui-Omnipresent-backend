@@ -6,6 +6,7 @@ export interface IGetEmployeesService {
   getEmployees: () => Promise<EmployeeModel[]>;
 }
 
+// eslint-disable-next-line no-redeclare
 export namespace IGetEmployeesService {
   export type Result = EmployeeModel[];
 }

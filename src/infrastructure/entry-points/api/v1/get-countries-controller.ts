@@ -14,7 +14,7 @@ export class GetCountriesController {
   }
 }
 
-export namespace GetCountriesController {
+namespace GetCountriesController {
   export type Request = IGetCountriesService.Params;
   export type Response = IGetCountriesService.Result;
 }

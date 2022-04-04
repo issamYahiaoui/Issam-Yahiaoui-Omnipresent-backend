@@ -1,4 +1,4 @@
-export * from './countries';
-export * from './employees';
-export * from './regions';
+export * from './get-employees-service';
+export * from './get-countries-service';
+export * from './region-service';
 export * from './impl';

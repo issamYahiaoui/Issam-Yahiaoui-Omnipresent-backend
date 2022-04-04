@@ -6,6 +6,7 @@ export interface IGetCountriesRepository {
   getCountries: (data: IGetCountriesRepository.Params) => Promise<IGetCountriesRepository.Result>;
 }
 
+// eslint-disable-next-line no-redeclare
 export namespace IGetCountriesRepository {
   export type Params = {
     countriesCodes: string[];

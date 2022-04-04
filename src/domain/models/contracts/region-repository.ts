@@ -8,6 +8,7 @@ export interface IRegionRepository {
   ) => Promise<IRegionRepository.getRegionByName.Result>;
 }
 
+// eslint-disable-next-line no-redeclare
 export namespace IRegionRepository {
   export namespace getRegionByName {
     export type Params = {

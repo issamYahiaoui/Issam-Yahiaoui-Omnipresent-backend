@@ -1,4 +1,4 @@
-import { EmployeeModel, IGetEmployeesRepository, IRegionRepository } from '@/domain/models';
+import {  IRegionRepository } from '@/domain/models';
 
 const REGION_DATA = [
   {
@@ -23,9 +23,9 @@ const REGION_DATA = [
   },
 ];
 
-//TODO: Replace this with a DB ORM Adapter
+// TODO: Replace this with a DB ORM Adapter
 export class RegionRepositoryAdapter implements IRegionRepository {
-  //Implementation
+  // Implementation
   async getRegionByNames(
     data: IRegionRepository.getRegionByName.Params,
   ): Promise<IRegionRepository.getRegionByName.Result> {

@@ -51,9 +51,9 @@ const EMPLOYEES_DATA = JSON.parse(`[
     }
 ]`);
 
-//TODO: Replace this with a DB ORM Adapter
+// TODO: Replace this with a DB ORM Adapter
 export class GetEmployeesRepositoryAdapter implements IGetEmployeesRepository {
-  //Implementation
+  // Implementation
   async getEmployees(): Promise<EmployeeModel[]> {
     return Promise.resolve(EMPLOYEES_DATA);
   }

@@ -1,6 +1,6 @@
 import { Adapter, Service } from '@tsclean/core';
 import { IRegionService } from '@/domain/use-cases';
-import { RegionModel, REGION_REPOSITORY, IRegionRepository } from '@/domain/models';
+import { REGION_REPOSITORY, IRegionRepository } from '@/domain/models';
 
 @Service()
 export class RegionServiceImpl implements IRegionService {

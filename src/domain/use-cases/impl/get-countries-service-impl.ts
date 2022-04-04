@@ -1,8 +1,6 @@
 import { Adapter, Service } from '@tsclean/core';
 import {
-  CountryModel,
   IGetCountriesRepository,
-  IGetEmployeesRepository,
   GET_COUNTRIES_REPOSITORY,
 } from '@/domain/models';
 import { IGetCountriesService } from '@/domain/use-cases';

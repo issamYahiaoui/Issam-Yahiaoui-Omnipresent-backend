@@ -1,3 +1,9 @@
+export type Currency = {
+  name: string;
+  code: string;
+  symbol: string;
+};
+
 export type CountryModel = {
   id: number;
   code: string;
@@ -8,8 +14,4 @@ export type CountryModel = {
   timezones: string[];
 };
 
-export type Currency = {
-  name: string;
-  code: string;
-  symbol: string;
-};
+

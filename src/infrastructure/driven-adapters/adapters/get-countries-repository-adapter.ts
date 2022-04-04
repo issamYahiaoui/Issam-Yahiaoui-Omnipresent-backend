@@ -1,4 +1,5 @@
-import { CountryModel, IGetCountriesRepository } from '@/domain/models';
+import logger from '@/application/common/logger';
+import {  IGetCountriesRepository } from '@/domain/models';
 import axios from 'axios';
 
 const COUNTRIES_SERVICE_URL = 'https://restcountries.com/v3.1/alpha';
@@ -7,11 +8,11 @@ export class GetCountriesRepositoryAdapter implements IGetCountriesRepository {
   // Implementation
   async getCountries(data: IGetCountriesRepository.Params): Promise<IGetCountriesRepository.Result> {
     const { countriesCodes } = data;
-    let countriesResult: any;
     try {
       const response = await axios.get(`${COUNTRIES_SERVICE_URL}?codes=${countriesCodes.join(',')}`);
       return this.parseCountriesResult(response.data, countriesCodes);
     } catch (e) {
+      logger.info(e);
       throw e;
     }
   }

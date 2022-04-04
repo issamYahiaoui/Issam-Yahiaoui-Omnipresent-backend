@@ -1,33 +1,37 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  extends: ['plugin:prettier/recommended', 'prettier'],
   env: {
-    commonjs: true,
-    es6: true,
-    node: true,
+    browser: true,
+    es2021: true
+  },
+  extends: [
+    'standard',
+    'prettier'
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
   globals: {
     assert: true,
-    should: true,
+    should: true
   },
-  parserOptions: {
-    ecmaVersion: 2019,
-    sourceType: 'module',
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-      es6: true,
-    },
-  },
+  plugins: [
+    '@typescript-eslint'
+  ],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    "no-useless-constructor": "off",
+    'array-callback-return': 'off',
+    'no-redeclare': 'off',
   },
   overrides: [
     {
       files: ['*.ts'],
       rules: {
-        '@typescript-eslint/explicit-function-return-type': ['warn'],
-      },
-    },
-  ],
-};
+        '@typescript-eslint/explicit-function-return-type': ['warn']
+      }
+    }
+  ]
+}

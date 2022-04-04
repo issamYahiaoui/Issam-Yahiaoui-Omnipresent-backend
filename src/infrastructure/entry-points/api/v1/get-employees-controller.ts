@@ -7,6 +7,7 @@ export class GetEmployeesController {
     @Adapter(GET_EMPLOYEES_SERVICE)
     private readonly employeesService: IGetEmployeesService,
   ) {}
+
   @Get()
   async getEmployees(): Promise<any> {
     return this.employeesService.getEmployees();

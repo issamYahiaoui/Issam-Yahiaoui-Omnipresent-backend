@@ -8,7 +8,7 @@ dotenv.config({ path: '.env' });
 |----------------------------------------------------------------------------------------|
 */
 export const ENVIRONMENT = process.env.NODE_ENV;
-const PROD = ENVIRONMENT === 'production';
+export const PROD = ENVIRONMENT === 'production';
 export const PORT = process.env.PORT;
 
 /**
