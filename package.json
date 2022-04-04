@@ -7,7 +7,18 @@
       "build": "rimraf dist && tsc -p tsconfig-build.json",
       "watch": "nodemon --exec \"npm run build && npm run start\" --watch src --ext ts",
       "test": "jest ./ --passWithNoTests --coverage --runInBand --no-cache",
-      "pre-commit": "lint-staged"
+      "lint": "eslint . --ext .js,.ts,.json --quiet"
+   },
+   "husky": {
+      "hooks": {
+         "pre-commit": "tsc --noEmit && lint-staged"
+      }
+   },
+   "lint-staged": {
+      "*.{js,ts,json}": [
+         "npm run lint --fix",
+         "git add"
+      ]
    },
    "dependencies": {
       "@tsclean/core": "^1.7.0",
