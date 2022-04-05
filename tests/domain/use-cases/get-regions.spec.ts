@@ -21,7 +21,11 @@ const makeSut = (): SutTypes => {
   return { sut, regionsRepositorySpy, realRegionsRepository,realSut };
 };
 describe('Get Regions use case', () => {
-  it('should call regionsServiceImpl with correct values', async function () {
+  it(`
+        GIVEN i am checking success scenario
+        WHEN calling getRegionByNames
+        THEN service function should be called with correct values
+  `, async function () {
     const { sut, regionsRepositorySpy } = makeSut();
     const getRegionsByNamesParams = mockGetRegionsByNameParams()
     await sut.getRegionByNames(getRegionsByNamesParams);
@@ -30,7 +34,11 @@ describe('Get Regions use case', () => {
     });
   });
 
-  it('should return  Asia region config when passing name=Asia', async function () {
+  it(`
+        GIVEN i am fetching countries
+        WHEN providing regions names
+        THEN service function should return AsiaRegionConfig
+  `, async function () {
     const { realSut} = makeSut();
     const getRegionsByNamesParams = mockGetAsiaRegion()
     const response = await realSut.getRegionByNames(getRegionsByNamesParams);

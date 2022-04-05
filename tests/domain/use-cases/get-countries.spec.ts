@@ -12,7 +12,11 @@ const makeSut = (): SutTypes => {
   return { sut, countriesRepositorySpy };
 };
 describe('Get Countries use case', () => {
-  it('should call countryServiceImpl with correct values', async function () {
+  it(`
+        GIVEN i am checking success scenario
+        WHEN calling countryServiceImpl
+        THEN service function should be called with correct values
+  `, async function () {
     const { sut, countriesRepositorySpy } = makeSut();
     const getCountriesParams = mockGetCountriesParams()
     await sut.getCountries(getCountriesParams);
@@ -21,7 +25,11 @@ describe('Get Countries use case', () => {
     });
   });
 
-  it('should return  fakeGetCountriesResponse on success', async function () {
+  it(`
+        GIVEN i am fetching countries
+        WHEN providing countriesCodes
+        THEN service function should return fakeGetCountriesResponse
+  `, async function () {
     const { sut} = makeSut();
     const getCountriesParams = mockGetCountriesParams()
     const response = await sut.getCountries(getCountriesParams);

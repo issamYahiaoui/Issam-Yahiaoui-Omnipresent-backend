@@ -19,20 +19,32 @@ const makeSut = (): SutTypes => {
 };
 
 describe('Get Employees use case', () => {
-  it('should call employeeServiceImpl with correct values', async function () {
+  it(`
+        GIVEN i am checking success scenario
+        WHEN calling employeeServiceImpl
+        THEN service function should be called with correct values
+  `, async function () {
     const { sut, employeesRepositorySpy } = makeSut();
     await sut.getEmployees();
     expect(Object.getOwnPropertyNames(employeesRepositorySpy).includes("params")).toEqual(false);
   });
 
-  it('should return  EMPLOYEES_COUNTRIES_DATA.FAKE_EMPLOYEES_RESPONSE on success', async function () {
+  it(`
+        GIVEN i am fetching countries
+        WHEN providing countriesCodes
+        THEN service function should return EMPLOYEES_COUNTRIES_DATA.FAKE_EMPLOYEES_RESPONSE
+  `, async function () {
     const { sut} = makeSut();
     const response = await sut.getEmployees();
     const expectedResponse = EMPLOYEES_COUNTRIES_DATA.FAKE_EMPLOYEES_RESPONSE;
     expect(response).toEqual(expectedResponse);
   });
 
-  it('should return employee data with country: null when passing an invalid country code', async function () {
+  it(`
+        GIVEN i am fetching employees
+        WHEN providing invalid countryCode
+        THEN service should return employee data with country: null
+`, async function () {
     const { sut, employeesRepositorySpy} = makeSut();
     const fakeEmployees = EMPLOYEES_COUNTRIES_DATA.INVALID_COUNTRY_CODE_EMPLOYEE_COUNTRIES_DATA
     jest.spyOn(employeesRepositorySpy, 'getEmployees').mockReturnValueOnce(Promise.resolve(fakeEmployees));
@@ -44,7 +56,11 @@ describe('Get Employees use case', () => {
   });
 
 
-  it('should return additional id  when employee region is Asia', async function () {
+  it(`
+        GIVEN i am fetching employee detail
+        WHEN employee region is Asia
+        THEN additional id should be returned in response
+  `, async function () {
     const { sut, employeesRepositorySpy} = makeSut();
     const fakeEmployees = EMPLOYEES_COUNTRIES_DATA.ASIA_EMPLOYEE_COUNTRIES_DATA
     jest.spyOn(employeesRepositorySpy, 'getEmployees').mockReturnValueOnce(Promise.resolve(fakeEmployees));
@@ -55,7 +71,11 @@ describe('Get Employees use case', () => {
     expect(response[0].id).toBeTruthy()
   });
 
-  it('should return additional id  when employee region is Europe', async function () {
+  it(`
+        GIVEN i am fetching employee detail
+        WHEN employee region is Europe
+        THEN additional id should be returned in response
+ `, async function () {
     const { sut, employeesRepositorySpy} = makeSut();
     const fakeEmployees = EMPLOYEES_COUNTRIES_DATA.EUROPE_EMPLOYEE_COUNTRIES_DATA
     jest.spyOn(employeesRepositorySpy, 'getEmployees').mockReturnValueOnce(Promise.resolve(fakeEmployees));
@@ -66,7 +86,11 @@ describe('Get Employees use case', () => {
     expect(response[0].id).toBeTruthy()
   });
 
-  it('should not return additional id  when employee region is America', async function () {
+  it(`
+        GIVEN i am fetching employee detail
+        WHEN employee region is Ameria
+        THEN additional id should not be returned in response
+  `, async function () {
     const { sut, employeesRepositorySpy} = makeSut();
     const fakeEmployees = EMPLOYEES_COUNTRIES_DATA.AMERICA_EMPLOYEE_COUNTRIES_DATA
     jest.spyOn(employeesRepositorySpy, 'getEmployees').mockReturnValueOnce(Promise.resolve(fakeEmployees));
@@ -77,7 +101,12 @@ describe('Get Employees use case', () => {
     expect(response[0].id).toBeFalsy()
   });
 
-  it('should not return additional id  when employee region is Asia after config change [hasAdditionalId: false]', async function () {
+  it(`
+        GIVEN i am fetching employee detail
+        WHEN employee region is Asia
+        AND config is changed for Asia to [hasAdditionalId: false] 
+        THEN additional id should not be returned in response
+     `, async function () {
     const { sut, employeesRepositorySpy, regionsRepositorySpy} = makeSut();
     const fakeEmployees = EMPLOYEES_COUNTRIES_DATA.ASIA_EMPLOYEE_COUNTRIES_DATA
     jest.spyOn(employeesRepositorySpy, 'getEmployees').mockReturnValueOnce(Promise.resolve(fakeEmployees));
@@ -89,7 +118,12 @@ describe('Get Employees use case', () => {
     expect(response[0].id).toBeFalsy()
   });
 
-  it('should  return additional id  when employee region is America after config change [hasAdditionalId: true]', async function () {
+  it(`
+        GIVEN i am fetching employee detail
+        WHEN employee region is America
+        AND config is changed for America to [hasAdditionalId: true] 
+        THEN additional id should  be returned in response
+  `, async function () {
     const { sut, employeesRepositorySpy, regionsRepositorySpy} = makeSut();
     const fakeEmployees = EMPLOYEES_COUNTRIES_DATA.AMERICA_EMPLOYEE_COUNTRIES_DATA
     jest.spyOn(employeesRepositorySpy, 'getEmployees').mockReturnValueOnce(Promise.resolve(fakeEmployees));
@@ -101,7 +135,12 @@ describe('Get Employees use case', () => {
     expect(response[0].id).toBeFalsy()
   });
 
-  it('should return id in `{firstName}{lastName}{dateOfBirth}` format', async function () {
+  it(`
+        GIVEN i am fetching employee detail
+        WHEN employee region is Asia  
+        THEN additional id should  be returned in response
+        AND in the format "{firstName}{lastName}{dateOfBirth}"
+  `, async function () {
     const { sut, employeesRepositorySpy} = makeSut();
     const fakeEmployees = EMPLOYEES_COUNTRIES_DATA.ASIA_EMPLOYEE_COUNTRIES_DATA
     jest.spyOn(employeesRepositorySpy, 'getEmployees').mockReturnValueOnce(Promise.resolve(fakeEmployees));
