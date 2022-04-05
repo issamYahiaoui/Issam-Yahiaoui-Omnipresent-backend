@@ -52,5 +52,5 @@ export const CONFIG_SQLITE = {
 };
 
 
-export const CONSOLE_LOGG_ENABLED = process.env.CONSOLE_LOGG_ENABLED;
-export const COUNTRIES_SERVICE_URL = process.env.COUNTRIES_SERVICE_URL;
+export const CONSOLE_LOGG_ENABLED = process.env.CONSOLE_LOGG_ENABLED || false;
+export const COUNTRIES_SERVICE_URL = process.env.COUNTRIES_SERVICE_URL || "https://restcountries.com/v3.1/alpha";
