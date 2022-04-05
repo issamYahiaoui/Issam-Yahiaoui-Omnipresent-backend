@@ -1,1 +1,1 @@
-export * from './Get-countries-repository-spy';
+export * from './countries-repository-spy';

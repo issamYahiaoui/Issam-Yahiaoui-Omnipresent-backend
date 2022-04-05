@@ -7,9 +7,9 @@ import { ICountriesService } from '@/domain/use-cases';
 
 @Service()
 export class CountriesServiceImpl implements ICountriesService {
-  constructor(@Adapter(COUNTRIES_REPOSITORY) private readonly getCountriesRepository: ICountriesRepository) {}
+  constructor(@Adapter(COUNTRIES_REPOSITORY) private readonly countriesRepository: ICountriesRepository) {}
 
   async getCountries(data: ICountriesService.Params): Promise<ICountriesService.Result> {
-    return await this.getCountriesRepository.getCountries(data);
+    return await this.countriesRepository.getCountries(data);
   }
 }

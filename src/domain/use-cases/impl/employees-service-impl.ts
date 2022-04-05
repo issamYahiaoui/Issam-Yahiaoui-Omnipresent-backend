@@ -32,7 +32,7 @@ export class EmployeesServiceImpl implements IEmployeesService {
       names: regionsNames,
     });
 
-    return this.parseEmployeesResponse(employees, countries, regionsConfig);
+    return  this.parseEmployeesResponse(employees, countries, regionsConfig);
   }
 
   private parseEmployeesResponse(
@@ -51,7 +51,7 @@ export class EmployeesServiceImpl implements IEmployeesService {
     });
     return employees.map((employee) => {
       const employeeCountry = countriesMap[employee.country];
-      const employeeRegion = regionsConfigMap[employeeCountry.region];
+      const employeeRegion = regionsConfigMap[employeeCountry?.region];
       const hasAdditionalId = employeeRegion?.hasAdditionalId;
       return {
         ...employee,

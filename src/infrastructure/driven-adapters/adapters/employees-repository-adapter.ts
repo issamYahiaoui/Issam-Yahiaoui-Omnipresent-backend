@@ -51,6 +51,7 @@ const EMPLOYEES_DATA = JSON.parse(`[
     }
 ]`);
 
+
 // TODO: Replace this with a DB ORM Adapter in the futur
 export class EmployeesRepositoryAdapter implements IEmployeesRepository {
   async getEmployees(): Promise<EmployeeModel[]> {
