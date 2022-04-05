@@ -1,6 +1,6 @@
 import { CountriesServiceImpl } from '@/domain/use-cases';
 import { fakeGetCountriesResponse, CountriesRepositorySpy } from '@/tests/domain/mocks';
-import { mockGetCountriesParams, mockInvalidGetCountriesParams } from "@/tests/domain/mocks/common";
+import { mockGetCountriesParams } from "@/tests/domain/mocks/common";
 
 type SutTypes = {
   sut: CountriesServiceImpl;
