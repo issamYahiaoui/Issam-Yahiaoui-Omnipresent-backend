@@ -77,7 +77,6 @@ describe('Get Employees use case', () => {
     expect(response[0].id).toBeFalsy()
   });
 
-
   it('should not return additional id  when employee region is Asia after config change [hasAdditionalId: false]', async function () {
     const { sut, employeesRepositorySpy, regionsRepositorySpy} = makeSut();
     const fakeEmployees = EMPLOYEES_COUNTRIES_DATA.ASIA_EMPLOYEE_COUNTRIES_DATA
@@ -102,8 +101,6 @@ describe('Get Employees use case', () => {
     expect(response[0].id).toBeFalsy()
   });
 
-
-
   it('should return id in `{firstName}{lastName}{dateOfBirth}` format', async function () {
     const { sut, employeesRepositorySpy} = makeSut();
     const fakeEmployees = EMPLOYEES_COUNTRIES_DATA.ASIA_EMPLOYEE_COUNTRIES_DATA
@@ -115,7 +112,5 @@ describe('Get Employees use case', () => {
     expect(response[0].id).toBeTruthy()
     expect(response[0].id).toEqual(`issamyahiaoui04101995`)
   });
-
-
 
 });

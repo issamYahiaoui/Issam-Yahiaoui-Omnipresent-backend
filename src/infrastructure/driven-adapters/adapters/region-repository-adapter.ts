@@ -19,7 +19,7 @@ const REGION_DATA = [
   {
     id: 4,
     name: 'Africa',
-    hasAdditionalId: true,
+    hasAdditionalId: false,
   },
 ];
 

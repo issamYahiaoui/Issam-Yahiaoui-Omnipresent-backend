@@ -30,7 +30,7 @@ export const EMPLOYEES_COUNTRIES_DATA = {
     dateOfBirth: "19/02/1990",
     jobTitle: "Software developer",
     company: "Test co",
-    country: "GBP"
+    country: "FR"
   }],
 
   ASIA_EMPLOYEE_COUNTRIES_DATA:[{
@@ -83,6 +83,7 @@ export const EMPLOYEES_COUNTRIES_DATA = {
       dateOfBirth: "19/02/1990",
       jobTitle: "Software developer",
       company: "Test co",
+      countryCode:"US" ,
       country: {
         code: "US",
         name: "United States of America",
@@ -118,6 +119,7 @@ export const EMPLOYEES_COUNTRIES_DATA = {
       dateOfBirth: "11/07/1984",
       jobTitle: "CTO",
       company: "Test co",
+      countryCode: "GBR",
       country: {
         code: "GBR",
         name: "United Kingdom of Great Britain and Northern Ireland",
@@ -144,7 +146,7 @@ export const EMPLOYEES_COUNTRIES_DATA = {
         ],
         region: "Europe"
       },
-      id: "LisaTestora11071984"
+      id: "lisatestora11071984"
     },
     {
       firstName: "Simon",
@@ -152,6 +154,7 @@ export const EMPLOYEES_COUNTRIES_DATA = {
       dateOfBirth: "01/11/1987",
       jobTitle: "Product manager",
       company: "Mock industries",
+      countryCode: "IND",
       country: {
         code: "IND",
         name: "Republic of India",
@@ -172,7 +175,7 @@ export const EMPLOYEES_COUNTRIES_DATA = {
         ],
         region: "Asia"
       },
-      id: "SimonMcTester01111987"
+      id: "simonmctester01111987"
     }
   ]
 }
@@ -192,5 +195,24 @@ export const fakeAmericaRegionConfig = [
     id: 1,
     name: 'America',
     hasAdditionalId: false,
+  },
+]
+
+
+
+export const mockGetRegionsByNameParams = ():  IRegionService.getRegionByName.Params => ({
+  names: ["Europe", "Asia", "Africa"]
+})
+
+
+export const mockGetAsiaRegion = ():  IRegionService.getRegionByName.Params => ({
+  names: ["Asia"]
+})
+
+export const AsiaRegionConfig = [
+  {
+    id: 1,
+    name: 'Asia',
+    hasAdditionalId: true,
   },
 ]
