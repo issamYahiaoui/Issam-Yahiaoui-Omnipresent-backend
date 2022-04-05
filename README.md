@@ -70,18 +70,8 @@ build the image.
 
 ```sh
 cd omnipresent
-docker build -t <youruser>/omnipresent:${package.json.version} .
+docker-compose up
 ```
-
-This will create the omnipresent image and pull in the necessary dependencies.
-Be sure to swap out `${package.json.version}` with the actual
-version of Omnipresent.
-
-```sh
-docker run -d -p 9000:9000 --restart=always --name=omnipresent <youruser>/omnipresent:${package.json.version}
-```
-Verify the deployment by navigating to your server address in
-your preferred browser.
 
 ```sh
 127.0.0.1:9000/status
