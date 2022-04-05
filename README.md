@@ -20,7 +20,7 @@ Employees API fetch employees Data including the country details.
 ## Acceptance Creterias
 - Countries details are available on Rest API, can be fetched by country codes which can be [cca2, ccn3, cca3, cioc] format ( need to be handled).
 - Countries Service need to be abstracted to be replaced easily in the future [ Caching could be added ]
-- Country Service is a possible point of failure so we should handle this, currently we are returning [] empty response cause unavailable country details should not cause Employees API failure
+- Country Service is a possible point of failure so we should handle this, currently we are returning [] empty response cause unavailable country details should not cause Employees API failure and Employees service should be highly available.
 - Employees API should return additional identifiers `id` in case the region is `Asia` or `Europe`
   since the region can be extracted from Country details, we should extract and abstract the logic, hence the need for `RegionConfig` table ( for now it's a repository with dummy data) can be easily replaced and persisted in same employees service or another service thanks to `Repository pattern` and `DI`
   -in case of Adding the additional identifier it should be in the correct format `{firstName}{lastName}{dateOfBirth}` : Lower case, date should be trimmed from '/'
