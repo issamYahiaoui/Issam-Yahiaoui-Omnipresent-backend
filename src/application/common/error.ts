@@ -8,9 +8,6 @@ export const ERROR_NAMES = {
   UnCaughtError : "UnCaughtError",
 };
 
-
-
-
 class BaseError extends Error {
   public rootCause: Error | null;
   public responseCode: string | undefined;

@@ -9,10 +9,11 @@ export class CountriesRepositoryAdapter implements ICountriesRepository {
     const { countriesCodes } = data;
     try {
       const response = await axios.get(`${COUNTRIES_SERVICE_URL}?codes=${countriesCodes.join(',')}`);
-      return this.parseCountriesResult(response.data, countriesCodes);
+      return this.parseCountriesResult(response.data , countriesCodes);
     } catch (e) {
       logger.info(e);
-      throw e;
+      // in case of any error from Countries Service we should return empty response []
+      return []
     }
   }
 

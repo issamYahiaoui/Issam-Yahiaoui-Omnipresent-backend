@@ -5,12 +5,51 @@ export const mockGetCountriesParams = ():  ICountriesService.Params => ({
   countriesCodes: ["ES", "FR", "DE", "IT", "US"]
 })
 
+export const mockInvalidGetCountriesParams = ():  ICountriesService.Params => ({
+  countriesCodes: ["ESlEFWE"]
+})
 export const mockGetRegionsByNamesParams = ():  IRegionService.getRegionByName.Params => ({
   names: ["Europe",  "Americas", "Asia", "Africa"]
 })
 
 
 export const EMPLOYEES_COUNTRIES_DATA = {
+
+  AMERICA_EMPLOYEE_COUNTRIES_DATA:[{
+    firstName: "Roy",
+    lastName: "Testerton",
+    dateOfBirth: "19/02/1990",
+    jobTitle: "Software developer",
+    company: "Test co",
+    country: "US"
+  }],
+
+  EUROPE_EMPLOYEE_COUNTRIES_DATA:[{
+    firstName: "Roy",
+    lastName: "Testerton",
+    dateOfBirth: "19/02/1990",
+    jobTitle: "Software developer",
+    company: "Test co",
+    country: "GBP"
+  }],
+
+  ASIA_EMPLOYEE_COUNTRIES_DATA:[{
+    firstName: "Issam",
+    lastName: "Yahiaoui",
+    dateOfBirth: "04/10/1995",
+    jobTitle: "Software developer",
+    company: "Test co",
+    country: "UAE"
+  }],
+   INVALID_COUNTRY_CODE_EMPLOYEE_COUNTRIES_DATA:[{
+     firstName: "Roy",
+     lastName: "Testerton",
+     dateOfBirth: "19/02/1990",
+     jobTitle: "Software developer",
+     company: "Test co",
+     country: "USSSSAACV"
+   }],
+
    FAKE_EMPLOYEES_DATA : [
     {
       firstName: "Roy",
@@ -139,3 +178,19 @@ export const EMPLOYEES_COUNTRIES_DATA = {
 }
 
 
+
+export const fakeAsiaRegionConfig = [
+  {
+    id: 1,
+    name: 'Asia',
+    hasAdditionalId: false,
+  },
+]
+
+export const fakeAmericaRegionConfig = [
+  {
+    id: 1,
+    name: 'America',
+    hasAdditionalId: false,
+  },
+]

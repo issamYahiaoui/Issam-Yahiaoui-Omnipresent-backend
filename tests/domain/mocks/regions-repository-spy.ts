@@ -19,7 +19,7 @@ export const fakeGetRegionsResponse = [
   {
     id: 4,
     name: 'Africa',
-    hasAdditionalId: true,
+    hasAdditionalId: false,
   },
 ];
 

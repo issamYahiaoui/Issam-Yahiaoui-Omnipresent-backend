@@ -1,6 +1,6 @@
 import { CountriesServiceImpl } from '@/domain/use-cases';
 import { fakeGetCountriesResponse, CountriesRepositorySpy } from '@/tests/domain/mocks';
-import { mockGetCountriesParams } from "@/tests/domain/mocks/common";
+import { mockGetCountriesParams, mockInvalidGetCountriesParams } from "@/tests/domain/mocks/common";
 
 type SutTypes = {
   sut: CountriesServiceImpl;
@@ -27,4 +27,5 @@ describe('Get Countries use case', () => {
     const response = await sut.getCountries(getCountriesParams);
     expect(response).toEqual(fakeGetCountriesResponse);
   });
+
 });

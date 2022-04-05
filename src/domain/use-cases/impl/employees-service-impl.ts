@@ -19,7 +19,7 @@ export class EmployeesServiceImpl implements IEmployeesService {
     private readonly regionService: IRegionService,
   ) {}
 
-  async getEmployees(): Promise<EmployeeModel[]> {
+  async getEmployees(): Promise<IEmployeesService.Result> {
     const employees = await this.getEmployeesRepository.getEmployees();
 
     const countriesCodes = employees.map((employee) => employee.country);
@@ -55,7 +55,8 @@ export class EmployeesServiceImpl implements IEmployeesService {
       const hasAdditionalId = employeeRegion?.hasAdditionalId;
       return {
         ...employee,
-        country: employeeCountry,
+        countryCode: employee.country,
+        country: employeeCountry || null,
         ...(hasAdditionalId && {
           id: EmployeesServiceImpl.getAdditionalId(employee),
         }),
@@ -65,6 +66,6 @@ export class EmployeesServiceImpl implements IEmployeesService {
 
   private static getAdditionalId(employee: EmployeeModel): any {
     const { firstName, lastName, dateOfBirth } = employee;
-    return [firstName, lastName, dateOfBirth.split('/').join('')].join('');
+    return [firstName.toLowerCase(), lastName.toLowerCase(), dateOfBirth.split('/').join('')].join('');
   }
 }
